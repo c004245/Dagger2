@@ -16,7 +16,7 @@ import dagger.Provides
  */
 
 @Module (includes = [ApiClientModule::class])
-class GIthubUserListModule(val view: MainPresenter.View) {
+class GithubUserListModule(val view: MainPresenter.View) {
 
     @Provides
     fun provideMainPresenter(prese)
