@@ -14,7 +14,7 @@ import dagger.Component
  * 모든 컴포넌트들은 컴포넌트에 포함된 모듈을 통해 의전송의 범위 확인 가능.
  */
 
-@Component(modules = [GithubUserListModule::class])
+@Component(modules = [GIthubUserListModule::class])
 interface GithubUserListComponent {
     fun inject(Activity: MainActivity)
 }
