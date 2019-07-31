@@ -30,12 +30,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
             .githubUserListModule(GithubUserListModule(this))
             .build()
         component.inject(this)
-        
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-//        DaggerCoffeeComponent.create().make().brew()
-//        val coffeeMaker = CoffeeMaker()
-//        DaggerCoffeeComponent.create().inject(coffeeMaker)
-//        coffeeMaker.brew()
     }
 
     override fun setPresenter(presenter: MainContract.Presenter) {
@@ -58,6 +54,9 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         val searchView = menu?.findItem(R.id.search_bar)?.actionView as? SearchView
         searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(query: String?): Boolean {
+                query?.let {
+                    searchGithubUser(query)
+                }
                 return false
             }
 
