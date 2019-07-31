@@ -1,8 +1,8 @@
 package com.playgilround.schedule.client.dagger2.presenter
 
-interface MainPresenter {
+class MainPresenter : MainContract.Presenter {
 
-    interface View {
+    override fun unsubscribe() {
 
     }
 }

@@ -5,11 +5,15 @@ import android.os.Bundle
 import android.view.Menu
 import android.widget.SearchView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.playgilround.schedule.client.dagger2.presenter.MainContract
 import com.playgilround.schedule.client.dagger2.presenter.MainPresenter
-import dagger.internal.DaggerCollections
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), MainPresenter.View {
+class MainActivity : AppCompatActivity(), MainContract.View {
+
+    @Inject
+    lateinit var mPresenter: MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,16 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
 //        val coffeeMaker = CoffeeMaker()
 //        DaggerCoffeeComponent.create().inject(coffeeMaker)
 //        coffeeMaker.brew()
+    }
 
+    override fun setPresenter(presenter: MainContract.Presenter) {
+        mPresenter = presenter
+    }
+
+    fun searchGithubUser(searchWord: String) {
+        if (searchWord.isNullOrBlank()) {
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
