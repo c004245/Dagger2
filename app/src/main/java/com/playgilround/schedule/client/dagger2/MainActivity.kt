@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.Menu
 import android.widget.SearchView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.playgilround.schedule.client.dagger2.di.DaggerGithubUserListComponent
+import com.playgilround.schedule.client.dagger2.di.GithubUserListModule
 import com.playgilround.schedule.client.dagger2.model.SearchResponse
 import com.playgilround.schedule.client.dagger2.presenter.MainContract
 import com.playgilround.schedule.client.dagger2.presenter.MainPresenter
@@ -24,7 +26,11 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        val component =
+        val component = DaggerGithubUserListComponent.builder()
+            .githubUserListModule(GithubUserListModule(this))
+            .build()
+        component.inject(this)
+        
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 //        DaggerCoffeeComponent.create().make().brew()
 //        val coffeeMaker = CoffeeMaker()
