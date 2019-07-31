@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        val component =
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 //        DaggerCoffeeComponent.create().make().brew()
 //        val coffeeMaker = CoffeeMaker()
