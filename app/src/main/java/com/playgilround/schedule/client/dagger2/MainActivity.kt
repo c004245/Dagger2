@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.widget.SearchView
+import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.playgilround.schedule.client.dagger2.di.DaggerGithubUserListComponent
 import com.playgilround.schedule.client.dagger2.di.GithubUserListModule
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     lateinit var mPresenter: MainContract.Presenter
 
     private val userFragment: UserFragment = UserFragment()
+    private val fragmentManager: FragmentManager = supportFragmentManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         component.inject(this)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        fragmentManager.beginTransaction().add(R.id.main_container, userFragment, "1").commit()
     }
 
     override fun setPresenter(presenter: MainContract.Presenter) {
@@ -61,6 +65,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
             }
 
             override fun onQueryTextSubmit(s: String?): Boolean {
+
                 s?.let {
                     searchGithubUser(s)
                 }
@@ -77,7 +82,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun onDataLoaded(storeResponse: SearchResponse) {
-        Log.d(TAG, "onDataLoaded....")
         userFragment.userAdapter.apply {
             items.clear()
             items.addAll(storeResponse.items)
@@ -86,7 +90,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun onDataFailed() {
-        Log.d(TAG, "onDataFailed")
         userFragment.userAdapter.apply {
             items.clear()
             notifyDataSetChanged()
