@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
             .build()
         component.inject(this)
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         fragmentManager.beginTransaction().add(R.id.main_container, userFragment, "1").commit()
     }
 
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     fun searchGithubUser(searchWord: String) {
-        if (searchWord.isNullOrBlank()) {
+        if (searchWord.isBlank()) {
             userFragment.userAdapter.apply {
                 items.clear()
                 notifyDataSetChanged()
@@ -75,12 +74,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         return super.onCreateOptionsMenu(menu)
     }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-
-        }
-    }
-
     override fun onDataLoaded(storeResponse: SearchResponse) {
         userFragment.userAdapter.apply {
             items.clear()
@@ -94,9 +87,5 @@ class MainActivity : AppCompatActivity(), MainContract.View {
             items.clear()
             notifyDataSetChanged()
         }
-    }
-
-    companion object {
-        val TAG = MainActivity::class.java.simpleName
     }
 }

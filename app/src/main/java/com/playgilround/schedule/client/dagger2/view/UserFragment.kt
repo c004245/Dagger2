@@ -14,7 +14,7 @@ import com.playgilround.schedule.client.dagger2.view.adapter.UserListAdapter
 
 class UserFragment : Fragment() {
 
-    val items by lazy { ArrayList<User>() }
+    private val items by lazy { ArrayList<User>() }
 
     val userAdapter by lazy { UserListAdapter(context, items) }
 

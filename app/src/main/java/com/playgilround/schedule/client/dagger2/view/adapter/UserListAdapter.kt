@@ -14,9 +14,7 @@ class UserListAdapter(var context: Context?, val items: ArrayList<User>) : Recyc
 
     override fun onBindViewHolder(holder: UserListViewHolder, position: Int) {
         holder.run {
-            items[position].let {
-                bindView(it)
-            }
+            bindView(items[position])
         }
     }
 
@@ -27,7 +25,7 @@ class UserListAdapter(var context: Context?, val items: ArrayList<User>) : Recyc
     override fun getItemCount(): Int = items.size
 
 
-    inner class UserListViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    inner class UserListViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bindView(userListItem: User) {
             with(view) {

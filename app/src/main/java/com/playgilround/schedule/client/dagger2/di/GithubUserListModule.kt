@@ -6,7 +6,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module(includes = [ApiClientModule::class])
-class GithubUserListModule(val view: MainContract.View) {
+class GithubUserListModule(private val view: MainContract.View) {
 
     @Provides
     fun provideMainPresenter(presenter: MainPresenter) : MainContract.Presenter {
