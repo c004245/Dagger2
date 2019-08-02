@@ -12,3 +12,8 @@ https://www.youtube.com/watch?v=mbntrG0LKtE 를 참고하여
 * Retrofit 
 
 * Glide
+
+
+19-08-02
+http://frogermcs.github.io/dependency-injection-with-dagger-2-introdution-to-di/
+해당 문서를 참고하여 관련 Dagger2 작업을 진행합니다.
