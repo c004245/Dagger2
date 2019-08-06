@@ -3,6 +3,8 @@ package com.example.repositoryuser.module
 import android.app.Application
 import com.example.repositoryuser.BuildConfig
 import com.example.repositoryuser.R
+import com.example.repositoryuser.data.GithubApiService
+import com.example.repositoryuser.data.UserManager
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -44,5 +46,17 @@ class GithubApiModule {
             .addConverterFactory(GsonConverterFactory.create())
 
         return builder.build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGithubApiService(restAdapter: Retrofit): GithubApiService {
+        return restAdapter.create(GithubApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUserManager(githubApiService: GithubApiService): UserManager {
+        return UserManager(githubApiService)
     }
 }
