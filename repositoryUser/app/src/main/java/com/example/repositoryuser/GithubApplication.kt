@@ -1,11 +1,18 @@
 package com.example.repositoryuser
 
 import android.app.Application
+import android.content.Context
+import com.example.repositoryuser.component.AppComponent
+import com.example.repositoryuser.component.UserComponent
 import timber.log.Timber
 
 class GithubApplication : Application() {
 
-    companion object {
+    private lateinit var appComponent: AppComponent
+    private lateinit var userComponent: UserComponent
+
+    operator fun get(context: Context): GithubApplication {
+        return context.applicationContext as GithubApplication
     }
 
     override fun onCreate() {
@@ -18,7 +25,7 @@ class GithubApplication : Application() {
     }
 
     private fun initAppComponent() {
-
+        appComponent = Dagger
     }
 
 
