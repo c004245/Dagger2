@@ -11,5 +11,10 @@ class PokemonApplication: Application(), HasAndroidInjector {
     @Inject
     lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
+    override fun onCreate() {
+        super.onCreate()
+        DaggerAppComponent.create()
+            .inject(this)
+    }
     override fun androidInjector() = androidInjector
 }
