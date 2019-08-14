@@ -1,10 +1,8 @@
-package com.example.pokemondagger2
+package com.example.pokemondagger2.ui
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
-import dagger.android.AndroidInjector
 import javax.inject.Inject
 
 class ViewPokemonActivity: AppCompatActivity() {

@@ -1,5 +1,9 @@
 package com.example.pokemondagger2
 
+import com.example.pokemondagger2.data.PokemonRepository
+import com.example.pokemondagger2.data.PokemonRepositoryImpl
+import com.example.pokemondagger2.data.PokemonService
+import com.example.pokemondagger2.ui.ViewPokemonActivity
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

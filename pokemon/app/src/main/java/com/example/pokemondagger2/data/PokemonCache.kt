@@ -1,4 +1,4 @@
-package com.example.pokemondagger2
+package com.example.pokemondagger2.data
 
 import javax.inject.Inject
 import javax.inject.Singleton

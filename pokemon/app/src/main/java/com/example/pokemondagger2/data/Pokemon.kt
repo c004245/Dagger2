@@ -1,4 +1,4 @@
-package com.example.pokemondagger2
+package com.example.pokemondagger2.data
 
 data class Pokemon (val name: String)
 
