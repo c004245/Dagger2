@@ -7,6 +7,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    AndroidSupportInjectionModule::class
+    AndroidSupportInjectionModule::class,
+    PokemonModule::class
 ])
 interface AppComponent: AndroidInjector<PokemonApplication>
