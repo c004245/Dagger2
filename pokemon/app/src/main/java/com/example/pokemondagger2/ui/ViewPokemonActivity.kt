@@ -11,7 +11,8 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class ViewPokemonActivity: AppCompatActivity(), LifecycleOwner {
+class ViewPokemonActivity: AppCompatActivity() {
+
 
     @Inject
     lateinit var viewModel: ViewPokemonViewModel

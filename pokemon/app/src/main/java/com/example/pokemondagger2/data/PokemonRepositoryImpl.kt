@@ -2,10 +2,11 @@ package com.example.pokemondagger2.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 import javax.inject.Inject
 
-private val executor = Executors.newSingleThreadExecutor()
+private val executor: Executor = Executors.newSingleThreadExecutor()
 
 class PokemonRepositoryImpl @Inject constructor(
     private val service: PokemonService,
