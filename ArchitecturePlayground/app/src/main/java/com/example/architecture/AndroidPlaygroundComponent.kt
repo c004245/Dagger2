@@ -8,7 +8,8 @@ import dagger.android.support.AndroidSupportInjectionModule
 @Component(
     modules = [
         AndroidInjectionModule::class,
-        AndroidSupportInjectionModule::class
+        AndroidSupportInjectionModule::class,
+        ActivityModule::class
     ]
 )
 interface AndroidPlaygroundComponent: AndroidInjector<App> {

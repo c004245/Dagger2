@@ -1,20 +1,16 @@
 package com.example.architecture
 
 import android.app.Application
+import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 import javax.inject.Inject
 
-class App: Application() {
+class App: DaggerApplication() {
 
     @Inject lateinit var githubService: GithubService
-    
-    override fun onCreate() {
-        super.onCreate()
-        configureDagger()
-    }
 
-    private fun configureDagger() {
-        DaggerAndroidPlaygroundComponent.builder()
+    override fun applicationInjector(): AndroidInjector<App> {
+        return DaggerAndroidPlaygroundComponent.builder()
             .build()
-            .inject(this)
     }
 }
