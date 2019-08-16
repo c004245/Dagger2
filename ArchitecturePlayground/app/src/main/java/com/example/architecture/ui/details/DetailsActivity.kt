@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.example.architecture.R
 import com.example.architecture.base.BaseActivity
 import com.example.architecture.services.GithubRepoEntity
+import com.example.architecture.utils.startActivity
 import kotlinx.android.synthetic.main.activity_details.*
 import javax.inject.Inject
 
@@ -57,6 +58,6 @@ class DetailsActivity: BaseActivity(), DetailsContract.View {
     }
 
     override fun startUrl(url: String) {
-//        Intent(Intent.ACTION_VIEW, Uri.parse(url)).startActivity(this)
+        Intent(Intent.ACTION_VIEW, Uri.parse(url)).startActivity(this)
     }
 }

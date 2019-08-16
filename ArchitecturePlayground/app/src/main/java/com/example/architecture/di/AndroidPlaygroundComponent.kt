@@ -1,5 +1,6 @@
-package com.example.architecture
+package com.example.architecture.di
 
+import com.example.architecture.App
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector

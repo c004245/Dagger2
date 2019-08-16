@@ -1,4 +1,4 @@
-package com.example.architecture
+package com.example.architecture.di
 
 import com.example.architecture.ui.main.MainActivity
 import dagger.Module

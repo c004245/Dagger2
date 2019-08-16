@@ -10,6 +10,7 @@ import com.example.architecture.R
 import com.example.architecture.base.BaseActivity
 import com.example.architecture.services.GithubRepoEntity
 import com.example.architecture.ui.details.DetailsActivity
+import com.example.architecture.utils.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -60,6 +61,6 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     private fun startDetailActivity(it: GithubRepoEntity) {
-//        DetailsActivity.getIntent(this, it).startActivity(this)
+        DetailsActivity.getIntent(this, it).startActivity(this)
     }
 }
