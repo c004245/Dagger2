@@ -24,6 +24,9 @@ class MainActivity : BaseActivity(), MainContract.View {
         setContentView(R.layout.activity_main)
         initViews()
         mainPresenter.attachView(this)
+        main_btn.setOnClickListener {
+            mainPresenter.loadResults()
+        }
     }
 
     private fun initViews() {
@@ -57,6 +60,6 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     private fun startDetailActivity(it: GithubRepoEntity) {
-        DetailsActivity.getIntent(this, it).startActivity(this)
+//        DetailsActivity.getIntent(this, it).startActivity(this)
     }
 }

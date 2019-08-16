@@ -1,14 +1,14 @@
 package com.example.architecture.ui.main
 
-import com.example.architecture.GithubService
-import com.example.architecture.ui.main.MainContract
+import com.example.architecture.services.GithubService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class MainPresenter @Inject constructor(
-    private val githubService: GithubService): MainContract.Presenter {
+    private val githubService: GithubService
+): MainContract.Presenter {
 
     private val TEST_USER: String = "JakeWharton"
     private var view: MainContract.View? = null

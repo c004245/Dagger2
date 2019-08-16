@@ -1,6 +1,7 @@
-package com.example.architecture
+package com.example.architecture.services
 
 import com.example.architecture.services.GithubApi
+import com.example.architecture.services.GithubApiBuilder
 import com.example.architecture.services.GithubRepoEntity
 import io.reactivex.Observable
 import javax.inject.Inject

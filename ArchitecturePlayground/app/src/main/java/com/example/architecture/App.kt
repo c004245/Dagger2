@@ -1,6 +1,6 @@
 package com.example.architecture
 
-import android.app.Application
+import com.example.architecture.services.GithubService
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import javax.inject.Inject

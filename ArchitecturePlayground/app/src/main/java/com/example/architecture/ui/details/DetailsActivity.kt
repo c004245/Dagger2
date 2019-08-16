@@ -57,6 +57,6 @@ class DetailsActivity: BaseActivity(), DetailsContract.View {
     }
 
     override fun startUrl(url: String) {
-        Intent(Intent.ACTION_VIEW, Uri.parse(url)).startActivity(this)
+//        Intent(Intent.ACTION_VIEW, Uri.parse(url)).startActivity(this)
     }
 }
