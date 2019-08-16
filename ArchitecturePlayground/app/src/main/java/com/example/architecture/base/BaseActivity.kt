@@ -1,4 +1,4 @@
-package com.example.architecture
+package com.example.architecture.base
 
 import dagger.android.support.DaggerAppCompatActivity
 

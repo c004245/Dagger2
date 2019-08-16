@@ -11,6 +11,8 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var githubService: GithubService
 
+    private var mainAdapter: MainAdapter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
