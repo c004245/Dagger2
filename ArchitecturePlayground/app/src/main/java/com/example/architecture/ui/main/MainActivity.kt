@@ -1,15 +1,13 @@
-package com.example.architecture.ui
+package com.example.architecture.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.architecture.GithubService
 import com.example.architecture.R
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var githubService: GithubService
+    @Inject lateinit var mainPresenter: MainPresenter
 
     private var mainAdapter: MainAdapter? = null
 
@@ -20,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+        mainAdapter = MainAdapter { }
 
     }
 }

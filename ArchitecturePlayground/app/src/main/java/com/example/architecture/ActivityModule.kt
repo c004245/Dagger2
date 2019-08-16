@@ -1,6 +1,6 @@
 package com.example.architecture
 
-import com.example.architecture.ui.MainActivity
+import com.example.architecture.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

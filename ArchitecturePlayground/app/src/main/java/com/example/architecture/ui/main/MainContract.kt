@@ -1,4 +1,4 @@
-package com.example.architecture.ui
+package com.example.architecture.ui.main
 
 import com.example.architecture.base.BasePresenter
 import com.example.architecture.base.BaseView

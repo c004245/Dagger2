@@ -1,6 +1,7 @@
-package com.example.architecture.ui
+package com.example.architecture.ui.main
 
 import com.example.architecture.GithubService
+import com.example.architecture.ui.main.MainContract
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
