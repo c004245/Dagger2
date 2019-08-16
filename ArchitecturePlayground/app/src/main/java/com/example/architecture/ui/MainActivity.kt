@@ -1,7 +1,9 @@
-package com.example.architecture
+package com.example.architecture.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.architecture.GithubService
+import com.example.architecture.R
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -12,5 +14,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initViews()
+    }
+
+    private fun initViews() {
+
     }
 }
