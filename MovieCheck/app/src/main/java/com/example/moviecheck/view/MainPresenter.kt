@@ -11,13 +11,14 @@ class MainPresenter @Inject constructor(private var dataSource: DataSource<Movie
 
     override fun setView(view: MainContract.View) {
         this.view = view
+        loadMovies()
     }
 
     override fun destroyView() {
         view = null
     }
 
-    fun loadMovies() {
+    private fun loadMovies() {
         dataSource.run {
             getAll(object : DataSource.OnSuccessListener<Movie> {
                 override fun onSuccess(list: List<Movie>) {
