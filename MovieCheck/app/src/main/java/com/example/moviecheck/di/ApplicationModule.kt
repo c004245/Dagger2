@@ -1,7 +1,8 @@
-package com.example.moviecheck
+package com.example.moviecheck.di
 
 import android.app.Application
 import android.content.Context
+import com.example.moviecheck.BuildConfig
 import com.squareup.picasso.Picasso
 import dagger.Binds
 import dagger.Module
@@ -26,7 +27,7 @@ abstract class ApplicationModule {
         fun provideRetrofit(): Retrofit {
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(BuildConfig.BASE_URL)
+                .baseUrl("https://api.themoviedb.org/3/")
                 .build()
         }
     }

@@ -1,7 +1,9 @@
-import java.lang.annotation.RetentionPolicy
+package com.example.moviecheck.di
+
 import javax.inject.Scope
-import kotlin.annotation.Retention
+import java.lang.annotation.Retention
+import java.lang.annotation.RetentionPolicy
 
 @Scope
-@Retention(AnnotationRetention.RUNTIME)
+@Retention(RetentionPolicy.RUNTIME)
 annotation class ActivityScoped

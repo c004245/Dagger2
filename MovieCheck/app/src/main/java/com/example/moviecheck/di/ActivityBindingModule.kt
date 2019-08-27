@@ -1,5 +1,6 @@
-package com.example.moviecheck
+package com.example.moviecheck.di
 
+import com.example.moviecheck.MainModule
 import com.example.moviecheck.view.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

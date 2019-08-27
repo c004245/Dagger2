@@ -1,8 +1,6 @@
 package com.example.moviecheck.di
 
 import android.app.Application
-import com.example.moviecheck.ActivityBindingModule
-import com.example.moviecheck.ApplicationModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
