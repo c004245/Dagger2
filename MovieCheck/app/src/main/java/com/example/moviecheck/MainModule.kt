@@ -2,6 +2,7 @@ package com.example.moviecheck
 
 import android.graphics.Movie
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moviecheck.view.MainFragment
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
